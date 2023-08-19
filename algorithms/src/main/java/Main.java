@@ -1,23 +1,35 @@
-import org.exercise.service.ArrayManipulation;
-import org.exercise.service.MathOperation;
-import org.exercise.service.YearOperation;
-import org.exercise.service.impl.DeclarativeSearcher;
+import org.exercise.interfaces.ArrayManipulation;
+import org.exercise.implementations.ArrayDeclarativeSearcher;
+import org.exercise.util.Utils;
 
+import static org.exercise.util.Utils.allEven;
+import static org.exercise.util.Utils.allEvenImperative;
 
-public class Main implements MathOperation, YearOperation {
+public class Main {
 
     public static void main(String[] args) {
-        final Main calculator = new Main();
-        final ArrayManipulation arrayManipulation = new DeclarativeSearcher();
-        callCalculateSquare(calculator);
-        callDistance(calculator);
-        callIsEven(calculator);
-        callIsLeap(calculator);
-        callFactorial(calculator);
-        callIsPrime(calculator);
-        callSum(arrayManipulation);
+        final ArrayManipulation arrayManipulation = new ArrayDeclarativeSearcher();
+        callCalculateSquare();
+        callDistance();
+        callIsEven();
+        callIsLeap();
+        callFactorial();
+        callIsPrime();
+        callSum();
         callSearch(arrayManipulation);
+        verifyIfAnArrayHasPrimeNumbers();
+        verifyIfAllTheElmentsAreEven();
+    }
 
+    private static void verifyIfAllTheElmentsAreEven() {
+        System.out.println("All numbers are even: " + allEvenImperative(new int[]{2, 4, 8}));
+    }
+
+    private static void verifyIfAnArrayHasPrimeNumbers() {
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8};
+        String message = Utils.hasAtLeastOnePrimeImperative(numbers) ? "The array has at least one prime number."
+                : "The array doesn't have any prime numbers.";
+        System.out.println(message);
     }
 
     private static void callSearch(ArrayManipulation arrayManipulation) {
@@ -28,39 +40,39 @@ public class Main implements MathOperation, YearOperation {
                 : "Element not found.");
     }
 
-    private static void callSum(ArrayManipulation calculator) {
-        System.out.println("Sum of array elements: " + calculator.sumDeclarative(new int[]{2, 2, 2, 2}));
+    private static void callSum() {
+        System.out.println("Sum of array elements: " + Utils.sumDeclarative(new int[]{2, 2, 2, 2}));
     }
 
-    private static void callIsPrime(final Main calculator) {
+    private static void callIsPrime() {
         int n = 4;
-        System.out.println(n + " " + (calculator.isPrimeImperative(n) ? "is a prime number" : "is not a prime number") + ".");
+        System.out.println(n + " " + (Utils.isPrimeImperative(n) ? "is a prime number" : "is not a prime number") + ".");
     }
 
-    private static void callFactorial(final Main calculator) {
+    private static void callFactorial() {
         final int number = 4;
-        System.out.println("Factorial of " + number + " is: " + calculator.factorialRecursive(number));
+        System.out.println("Factorial of " + number + " is: " + Utils.factorialRecursive(number));
     }
 
-    private static void callIsLeap(final Main calculator) {
+    private static void callIsLeap() {
         final int year = 2023;
-        System.out.println(year + " is " + (calculator.isLeap(year) ? "leap year" : "not leap year") + ".");
+        System.out.println(year + " is " + (Utils.isLeap(year) ? "leap year" : "not leap year") + ".");
     }
 
-    private static void callIsEven(final Main mathOperationImpl) {
+    private static void callIsEven() {
         final int num = 2;
-        System.out.println(num + " is " + (mathOperationImpl.isEvent(num) ? "even" : "odd") + ".");
+        System.out.println(num + " is " + (Utils.isEvent(num) ? "even" : "odd") + ".");
     }
 
-    private static void callDistance(final Main main) {
+    private static void callDistance() {
         final double x = 2.0;
         final double y = 2.0;
-        System.out.println("Distance from (" + x + ", " + y + ") to origin is: " + main.distance(x, y));
+        System.out.println("Distance from (" + x + ", " + y + ") to origin is: " + Utils.distance(x, y));
     }
 
-    private static void callCalculateSquare(final Main main) {
+    private static void callCalculateSquare() {
         int number = 2;
-        System.out.println("The square of " + number + " is: " + main.calculateSquare(number));
+        System.out.println("The square of " + number + " is: " + Utils.calculateSquare(number));
     }
 }
 

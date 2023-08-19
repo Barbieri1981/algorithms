@@ -1,8 +1,8 @@
-package org.exercise.service.impl;
+package org.exercise.implementations;
 
-import org.exercise.service.ArrayManipulation;
+import org.exercise.interfaces.ArrayManipulation;
 
-public class ArraySearcher implements ArrayManipulation {
+public class ArrayImperativeSearcher implements ArrayManipulation {
     @Override
     public int search(int[] array, int num) {
         for (int i = 0; i < array.length; i++) {

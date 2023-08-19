@@ -1,11 +1,11 @@
-package org.exercise.service.impl;
+package org.exercise.implementations;
 
-import org.exercise.service.ArrayManipulation;
+import org.exercise.interfaces.ArrayManipulation;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-public class DeclarativeSearcher implements ArrayManipulation {
+public class ArrayDeclarativeSearcher implements ArrayManipulation {
     @Override
     public int search(int[] array, int num) {
         return Arrays.stream(array)

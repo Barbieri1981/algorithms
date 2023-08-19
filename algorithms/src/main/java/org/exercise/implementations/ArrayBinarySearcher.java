@@ -1,10 +1,10 @@
-package org.exercise.service.impl;
+package org.exercise.implementations;
 
-import org.exercise.service.ArrayManipulation;
+import org.exercise.interfaces.ArrayManipulation;
 
 import java.util.Arrays;
 
-public class BinarySearcher implements ArrayManipulation {
+public class ArrayBinarySearcher implements ArrayManipulation {
     @Override
     public int search(int[] array, int num) {
         Arrays.sort(array);

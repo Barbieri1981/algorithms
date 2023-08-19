@@ -1,6 +1,23 @@
-# Algorithms Project
+# Java Programming Examples: Imperative and Declarative
 
-Basic Algorithms
+Welcome to this repository containing Java programming examples showcasing both imperative and declarative ways of solving problems using the Java language. 
+
+
+## Imperative Programming
+
+Imperative programming is a programming paradigm where the focus is on describing the sequence of actions to accomplish a task. 
+
+
+## Declarative Programming
+
+Declarative programming express what the program should achieve without specifying the step-by-step process of how to achieve it. 
+
+## License
+
+This repository is provided under the [MIT License](LICENSE). Feel free to use and modify the code examples for your own learning and projects.
+
+Happy coding!
+
 
 ## Prerequisites
 

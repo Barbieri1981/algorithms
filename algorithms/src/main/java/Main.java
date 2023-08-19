@@ -5,18 +5,23 @@ import org.exercise.service.YearOperation;
 public class Main implements MathOperation, YearOperation {
     public static void main(String[] args) {
         final Main calculator = new Main();
-        callCalculateSquare(calculator);
-        callDistance(calculator);
-        callIsEven(calculator);
-        callIsLeap(calculator);
-        callFactorial(calculator);
-        callIsPrime(calculator);
+//        callCalculateSquare(calculator);
+//        callDistance(calculator);
+//        callIsEven(calculator);
+//        callIsLeap(calculator);
+//        callFactorial(calculator);
+//        callIsPrime(calculator);
+        callSum(calculator);
 
+    }
+
+    private static void callSum(Main calculator) {
+        System.out.println("Sum of array elements: " + calculator.sumDeclarative(new int[]{2, 2, 2, 2}));
     }
 
     private static void callIsPrime(final Main calculator) {
         int n = 4;
-        System.out.println(n + " " + (calculator.isPrime(n) ? "is a prime number" : "is not a prime number") + ".");
+        System.out.println(n + " " + (calculator.isPrimeImperative(n) ? "is a prime number" : "is not a prime number") + ".");
     }
 
     private static void callFactorial(final Main calculator) {

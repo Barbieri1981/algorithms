@@ -1,5 +1,6 @@
 package org.exercise.service;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public interface MathOperation {
@@ -36,7 +37,7 @@ public interface MathOperation {
      * @param n
      * @return the factorial of a natural number
      */
-    default int factorialWithLoop(final int n) {
+    default int factorialImperative(final int n) {
         if (n == 0) {
             return 1;
         }
@@ -53,7 +54,7 @@ public interface MathOperation {
      * @param n
      * @return the factorial of a natural number
      */
-    default int factorialWithStream(int n) {
+    default int factorialDeclarative(int n) {
         return IntStream.rangeClosed(1, n)
                 .reduce(1, (a, b) -> a * b);
     }
@@ -72,7 +73,11 @@ public interface MathOperation {
      * @param n
      * @return indicates if a number is prime
      */
-    default boolean isPrime(final int n) {
+    default boolean isPrimeImperative(final int n) {
+        if (n <= 1) {
+            return false;
+        }
+
         int count = 0;
         int i = 1;
         while (i <= n && count < 3) {
@@ -81,7 +86,47 @@ public interface MathOperation {
             }
             i++;
         }
+
         return count == 2;
+    }
+
+    /**
+     * Verifies if a number is prime
+     * @param n
+     * @return indicates if a number is prime
+     */
+    default boolean isPrimeDeclarative(final int n) {
+        if (n <= 1) {
+            return false;
+        }
+        long divisorCount = IntStream.iterate(1, i -> i + 1)
+                .limit(n)
+                .filter(i -> n % i == 0)
+                .count();
+
+        return divisorCount == 2;
+    }
+
+    /**
+     * Sum the elements of an array
+     * @param array the array to sum the element
+     * @return the sum of the array elements
+     */
+    default int sumImperative(final int[] array) {
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum;
+    }
+
+    /**
+     * Sum the elements of an array
+     * @param array the array to sum the element
+     * @return the sum of the array elements
+     */
+    default int sumDeclarative(final int[] array) {
+        return Arrays.stream(array).sum();
     }
 
 }

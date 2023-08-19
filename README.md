@@ -10,13 +10,7 @@ Imperative programming is a programming paradigm where the focus is on describin
 
 ## Declarative Programming
 
-Declarative programming express what the program should achieve without specifying the step-by-step process of how to achieve it. 
-
-## License
-
-This repository is provided under the [MIT License](LICENSE). Feel free to use and modify the code examples for your own learning and projects.
-
-Happy coding!
+Declarative programming express what the program should achieve without specifying the step-by-step process of how to achieve it.
 
 
 ## Prerequisites
@@ -41,3 +35,9 @@ javac Main.java
 ```sh
 java Main
 ```
+
+## License
+
+Feel free to use and modify the code examples for your own learning and projects.
+
+Happy coding!

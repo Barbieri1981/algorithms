@@ -1,21 +1,34 @@
+import org.exercise.service.ArrayManipulation;
 import org.exercise.service.MathOperation;
 import org.exercise.service.YearOperation;
+import org.exercise.service.impl.DeclarativeSearcher;
 
 
 public class Main implements MathOperation, YearOperation {
+
     public static void main(String[] args) {
         final Main calculator = new Main();
-//        callCalculateSquare(calculator);
-//        callDistance(calculator);
-//        callIsEven(calculator);
-//        callIsLeap(calculator);
-//        callFactorial(calculator);
-//        callIsPrime(calculator);
-        callSum(calculator);
+        final ArrayManipulation arrayManipulation = new DeclarativeSearcher();
+        callCalculateSquare(calculator);
+        callDistance(calculator);
+        callIsEven(calculator);
+        callIsLeap(calculator);
+        callFactorial(calculator);
+        callIsPrime(calculator);
+        callSum(arrayManipulation);
+        callSearch(arrayManipulation);
 
     }
 
-    private static void callSum(Main calculator) {
+    private static void callSearch(ArrayManipulation arrayManipulation) {
+        int[] array = { 2, 1, 3, 0, 5 };
+        int result = arrayManipulation.search(array, 3);
+        System.out.println(result != -1
+                ? "Element found at index: " + result
+                : "Element not found.");
+    }
+
+    private static void callSum(ArrayManipulation calculator) {
         System.out.println("Sum of array elements: " + calculator.sumDeclarative(new int[]{2, 2, 2, 2}));
     }
 

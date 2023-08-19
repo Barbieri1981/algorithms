@@ -1,6 +1,5 @@
 package org.exercise.service;
 
-import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public interface MathOperation {
@@ -107,26 +106,5 @@ public interface MathOperation {
         return divisorCount == 2;
     }
 
-    /**
-     * Sum the elements of an array
-     * @param array the array to sum the element
-     * @return the sum of the array elements
-     */
-    default int sumImperative(final int[] array) {
-        int sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum += array[i];
-        }
-        return sum;
-    }
-
-    /**
-     * Sum the elements of an array
-     * @param array the array to sum the element
-     * @return the sum of the array elements
-     */
-    default int sumDeclarative(final int[] array) {
-        return Arrays.stream(array).sum();
-    }
 
 }

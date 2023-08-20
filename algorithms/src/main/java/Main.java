@@ -2,7 +2,6 @@ import org.exercise.interfaces.ArrayManipulation;
 import org.exercise.implementations.ArrayDeclarativeSearcher;
 import org.exercise.util.Utils;
 
-import static org.exercise.util.Utils.allEven;
 import static org.exercise.util.Utils.allEvenImperative;
 
 public class Main {
